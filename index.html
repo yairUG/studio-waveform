@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waveform Studio | Parametric Architectural Shelving</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#F9F7F2] text-[#1A1A1A] antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center mix-blend-difference text-white">
+        <div class="text-xl tracking-widest font-light serif uppercase">Waveform</div>
+        <div class="hidden md:flex space-x-12 text-xs uppercase tracking-widest">
+            <a href="#collection" class="hover:opacity-50 transition-opacity duration-300">The Collection</a>
+            <a href="#process" class="hover:opacity-50 transition-opacity duration-300">Process</a>
+            <a href="#b2b" class="hover:opacity-50 transition-opacity duration-300">B2B Portal</a>
+        </div>
+        <a href="#b2b" class="border border-white px-6 py-2 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">Inquire</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/shelf7.png" alt="Waveform shelving — organic parametric flow" class="w-full h-full object-cover brightness-75">
+            <div class="absolute inset-0 bg-black/20"></div>
+        </div>
+        <div class="relative z-10 text-center px-4 reveal">
+            <p class="text-white uppercase tracking-[0.5em] text-xs mb-6">Batch 01 / Limited Release</p>
+            <h1 class="serif text-5xl md:text-8xl text-white italic font-light leading-tight">
+                Asymmetry by <span class="block not-italic font-bold">Nature.</span>
+            </h1>
+            <p class="text-white/60 font-light text-sm md:text-base max-w-md mx-auto mt-6">Parametric shelving for architects and interior designers who refuse the ordinary.</p>
+            <div class="mt-12 flex flex-col md:flex-row gap-6 justify-center">
+                <a href="#collection" class="bg-white text-black px-10 py-4 text-xs uppercase tracking-widest hover:scale-105 transition-transform duration-300">View Collection</a>
+                <a href="#b2b" class="border border-white text-white px-10 py-4 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">Trade Inquiry</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy / Process -->
+    <section id="process" class="py-24 md:py-40 bg-white">
+        <div class="container mx-auto px-8 grid md:grid-cols-2 gap-20 items-center">
+            <div class="max-w-md reveal">
+                <p class="uppercase tracking-[0.3em] text-xs text-neutral-400 mb-4">Our Process</p>
+                <h2 class="serif text-4xl md:text-5xl mb-8 italic">The Machine &amp; <br><strong>The Grain.</strong></h2>
+                <p class="text-neutral-600 font-light leading-relaxed mb-6">Each Waveform piece begins as a digital simulation. Using generative algorithms, we map fluid dynamics to structural physics &mdash; then hand-finish every curve in locally sourced hardwood.</p>
+                <p class="text-neutral-400 font-light leading-relaxed text-sm">No two shelves are identical. The algorithm ensures structural integrity; the craftsman ensures soul.</p>
+                <img src="images/shelf6.png" alt="Macro detail — hand-finished wood grain" class="w-full h-64 object-cover mt-12 grayscale hover:grayscale-0 transition-all duration-700 shadow-xl">
+            </div>
+            <div class="aspect-[4/5] bg-neutral-100 overflow-hidden reveal">
+                <img src="images/shelf2.png" alt="Waveform shelf in high-tech office setting" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection -->
+    <section id="collection" class="py-24 md:py-40">
+        <div class="container mx-auto px-8">
+            <div class="max-w-lg mb-20 reveal">
+                <p class="uppercase tracking-[0.3em] text-xs text-neutral-400 mb-4">The Collection</p>
+                <h2 class="serif text-4xl md:text-5xl italic">Two Temperaments,<br><strong>One Language.</strong></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
+                <div class="group reveal">
+                    <div class="overflow-hidden">
+                        <img src="images/shelf1.png" alt="Light Birch — lobby installation" class="w-full aspect-video object-cover mb-6 group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="flex justify-between uppercase tracking-widest text-xs">
+                        <span>Light Birch</span>
+                        <span class="text-neutral-400">From 1,200 NIS</span>
+                    </div>
+                    <p class="text-neutral-400 font-light text-xs mt-2">Scandinavian birch / matte finish / lobby &amp; reception</p>
+                </div>
+                <div class="group md:mt-32 reveal">
+                    <div class="overflow-hidden">
+                        <img src="images/shelf5.png" alt="Smoked Walnut — executive suite" class="w-full aspect-[3/2] object-cover mb-6 group-hover:scale-105 transition-transform duration-700" style="object-position: center 35%">
+                    </div>
+                    <div class="flex justify-between uppercase tracking-widest text-xs">
+                        <span>Smoked Walnut</span>
+                        <span class="text-neutral-400">From 1,450 NIS</span>
+                    </div>
+                    <p class="text-neutral-400 font-light text-xs mt-2">American walnut / oil finish / executive &amp; boardroom</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Context — Full-Width Image Break -->
+    <section class="relative h-[45vh] overflow-hidden">
+        <img src="images/shelf4.png" alt="Minimalist CEO office installation" class="w-full h-full object-cover" style="object-position: center 25%">
+        <div class="absolute inset-0 bg-black/30 flex items-center justify-center reveal">
+            <p class="text-white serif text-3xl md:text-5xl italic text-center px-8 max-w-3xl font-light leading-snug">&ldquo;Furniture should whisper,<br>not shout.&rdquo;</p>
+        </div>
+    </section>
+
+    <!-- B2B Portal -->
+    <section id="b2b" class="py-24 md:py-40 bg-[#1A1A1A] text-white">
+        <div class="container mx-auto px-8 grid lg:grid-cols-2 gap-24">
+            <div class="reveal">
+                <p class="uppercase tracking-[0.3em] text-xs text-neutral-500 mb-4">For the Trade</p>
+                <h2 class="serif text-4xl md:text-5xl italic mb-6">Project Inquiry</h2>
+                <p class="text-neutral-400 font-light leading-relaxed mb-12 max-w-md">Volume pricing, custom dimensions, and dedicated project management for architects and design firms. We respond within 24 hours.</p>
+                <ul class="divide-y divide-white/10 border-y border-white/10 text-sm">
+                    <li class="py-4 flex justify-between"><span>Dimensions</span><span class="opacity-60">Custom &amp; Standard (120cm x 22cm)</span></li>
+                    <li class="py-4 flex justify-between"><span>Materials</span><span class="opacity-60">Birch, Walnut, Oak, Custom</span></li>
+                    <li class="py-4 flex justify-between"><span>Lead Time</span><span class="opacity-60">14&ndash;21 Days</span></li>
+                    <li class="py-4 flex justify-between"><span>MOQ</span><span class="opacity-60">5 Units</span></li>
+                </ul>
+                <img src="images/shelf3.png" alt="Waveform shelving in conference room" class="mt-12 w-full h-48 object-cover opacity-40 hover:opacity-70 transition-opacity duration-500" style="object-position: center 30%">
+            </div>
+            <div class="bg-white p-10 md:p-12 text-black reveal">
+                <h3 class="serif text-2xl italic mb-8">Get in Touch</h3>
+                <form id="b2b-form" class="space-y-6" novalidate>
+                    <div>
+                        <input type="text" name="name" placeholder="Full Name *" required
+                               class="w-full border-b border-neutral-300 py-3 outline-none text-sm font-light placeholder:text-neutral-400 focus:border-black transition-colors duration-300">
+                        <p class="field-error text-red-600 text-xs mt-1 hidden"></p>
+                    </div>
+                    <div>
+                        <input type="text" name="company" placeholder="Company / Studio *" required
+                               class="w-full border-b border-neutral-300 py-3 outline-none text-sm font-light placeholder:text-neutral-400 focus:border-black transition-colors duration-300">
+                        <p class="field-error text-red-600 text-xs mt-1 hidden"></p>
+                    </div>
+                    <div>
+                        <input type="email" name="email" placeholder="Email Address *" required
+                               class="w-full border-b border-neutral-300 py-3 outline-none text-sm font-light placeholder:text-neutral-400 focus:border-black transition-colors duration-300">
+                        <p class="field-error text-red-600 text-xs mt-1 hidden"></p>
+                    </div>
+                    <div>
+                        <input type="tel" name="phone" placeholder="Phone Number *" required
+                               class="w-full border-b border-neutral-300 py-3 outline-none text-sm font-light placeholder:text-neutral-400 focus:border-black transition-colors duration-300">
+                        <p class="field-error text-red-600 text-xs mt-1 hidden"></p>
+                    </div>
+                    <div>
+                        <textarea name="message" rows="3" placeholder="Project details (optional)"
+                                  class="w-full border-b border-neutral-300 py-3 outline-none text-sm font-light placeholder:text-neutral-400 focus:border-black transition-colors duration-300 resize-none"></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn"
+                            class="w-full bg-[#1A1A1A] text-white py-4 text-xs uppercase tracking-widest mt-4 hover:bg-neutral-800 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                        Submit Inquiry
+                    </button>
+                    <div id="form-success" class="hidden text-center py-4">
+                        <p class="serif text-xl italic mb-2">Thank you.</p>
+                        <p class="text-neutral-500 text-sm font-light">We'll be in touch within 24 hours.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1A1A1A] text-white border-t border-white/10 py-12">
+        <div class="container mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-xs tracking-widest uppercase font-light serif">Waveform Studio</div>
+            <div class="flex space-x-10 text-xs uppercase tracking-widest text-neutral-500">
+                <a href="#process" class="hover:text-white transition-colors duration-300">Process</a>
+                <a href="#collection" class="hover:text-white transition-colors duration-300">Collection</a>
+                <a href="#b2b" class="hover:text-white transition-colors duration-300">Trade</a>
+            </div>
+            <p class="text-neutral-600 text-xs">&copy; 2026 Waveform Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

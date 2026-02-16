@@ -1,0 +1,82 @@
+/* ========================================
+   Waveform Studio — Quiet Luxury
+   ======================================== */
+
+/* Base Typography */
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+.serif {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+    background: #1A1A1A;
+    color: #F9F7F2;
+}
+
+/* ---- Scroll Reveal ---- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger children in grids */
+.reveal:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+/* ---- Navigation ---- */
+nav {
+    transition: padding 0.3s ease;
+}
+
+nav.scrolled {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* ---- Form ---- */
+#b2b-form input:focus,
+#b2b-form textarea:focus {
+    border-color: #1A1A1A;
+}
+
+#b2b-form input.invalid {
+    border-color: #dc2626;
+}
+
+/* ---- Image Transitions ---- */
+img {
+    transition: filter 0.5s ease, transform 0.7s ease, opacity 0.5s ease;
+}
+
+/* ---- Responsive Fine-Tuning ---- */
+@media (max-width: 768px) {
+    nav .text-xl {
+        font-size: 0.875rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.875rem;
+    }
+}
