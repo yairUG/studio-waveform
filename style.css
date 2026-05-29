@@ -1,34 +1,78 @@
 /* ========================================
-   Waveform Studio — Quiet Luxury
+   Waveform Studio — Luxury Furniture
+   Design system: editorial, quiet luxury
+   Fonts: Playfair Display / Cormorant Garamond / DM Mono
    ======================================== */
 
-/* Base Typography */
+/* ---- Font Classes ---- */
+.serif  { font-family: 'Playfair Display', serif; }
+.body   { font-family: 'Cormorant Garamond', serif; }
+.mono   { font-family: 'DM Mono', monospace; }
+
+/* ---- Base ---- */
+html { scroll-behavior: smooth; }
+
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
+    -webkit-font-smoothing: antialiased;
 }
 
-.serif {
-    font-family: 'Playfair Display', serif;
-}
-
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Selection */
 ::selection {
-    background: #1A1A1A;
-    color: #F9F7F2;
+    background: #1C1C1C;
+    color: #F5F0E8;
 }
 
-/* ---- Scroll Reveal ---- */
+/* ---- Cursor ---- */
+a, button, [role="button"], input[type="submit"],
+.btn-primary, .btn-outline, .btn-footer,
+.material-row, .process-step, .group {
+    cursor: pointer;
+}
+
+/* ---- Navigation ---- */
+#main-nav {
+    transition: padding 0.4s ease, backdrop-filter 0.4s ease, background 0.4s ease;
+}
+
+#main-nav.scrolled {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: rgba(28, 28, 28, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+#main-nav.scrolled .nav-logo,
+#main-nav.scrolled .nav-link,
+#main-nav.scrolled .nav-cta {
+    mix-blend-mode: normal;
+    color: #F5F0E8;
+    border-color: rgba(245, 240, 232, 0.3);
+}
+
+#main-nav.scrolled .nav-cta:hover {
+    background: #F5F0E8;
+    color: #1C1C1C;
+    border-color: #F5F0E8;
+}
+
+/* ---- Scroll Indicator ---- */
+.scroll-line {
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+    0%, 100% { opacity: 0.2; transform: scaleY(1); }
+    50%       { opacity: 0.6; transform: scaleY(1.15); }
+}
+
+/* ---- Reveal Animations ---- */
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(32px);
+    transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .reveal.visible {
@@ -36,47 +80,112 @@ html {
     transform: translateY(0);
 }
 
-/* Stagger children in grids */
-.reveal:nth-child(2) {
-    transition-delay: 0.15s;
+.reveal:nth-child(2) { transition-delay: 0.1s; }
+.reveal:nth-child(3) { transition-delay: 0.2s; }
+
+/* Stats bar stagger */
+.reveal-stat {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* ---- Navigation ---- */
-nav {
-    transition: padding 0.3s ease;
+.reveal-stat.visible { opacity: 1; transform: translateY(0); }
+.reveal-stat:nth-child(1) { transition-delay: 0s; }
+.reveal-stat:nth-child(2) { transition-delay: 0.1s; }
+.reveal-stat:nth-child(3) { transition-delay: 0.2s; }
+.reveal-stat:nth-child(4) { transition-delay: 0.3s; }
+
+/* ---- Buttons ---- */
+.btn-primary, .btn-outline, .btn-footer {
+    display: inline-block;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
 
-nav.scrolled {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+.btn-primary:active, .btn-outline:active, .btn-footer:active {
+    transform: scale(0.98);
+}
+
+/* ---- Process steps ---- */
+.process-step {
+    transition: background 0.2s ease;
+}
+
+.process-step:hover {
+    background: rgba(28, 28, 28, 0.02);
+}
+
+/* ---- Collection hover ---- */
+.group img {
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ---- Material rows ---- */
+.material-row {
+    transition: background 0.15s ease;
+}
+
+/* ---- Spec cards ---- */
+.spec-card {
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.spec-card:hover {
+    border-color: #8B7355;
+    background: rgba(139, 115, 85, 0.04);
 }
 
 /* ---- Form ---- */
+#b2b-form input,
+#b2b-form textarea {
+    transition: border-color 0.2s ease;
+    outline: none;
+}
+
 #b2b-form input:focus,
 #b2b-form textarea:focus {
-    border-color: #1A1A1A;
+    border-color: #1C1C1C;
 }
 
 #b2b-form input.invalid {
     border-color: #dc2626;
 }
 
-/* ---- Image Transitions ---- */
-img {
-    transition: filter 0.5s ease, transform 0.7s ease, opacity 0.5s ease;
+#b2b-form input:focus-visible,
+#b2b-form textarea:focus-visible {
+    outline: 2px solid rgba(28,28,28,0.15);
+    outline-offset: 2px;
 }
 
-/* ---- Responsive Fine-Tuning ---- */
+/* ---- Images ---- */
+img {
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                filter 0.6s ease,
+                opacity 0.4s ease;
+}
+
+/* ---- Responsive ---- */
 @media (max-width: 768px) {
-    nav .text-xl {
-        font-size: 0.875rem;
+    h1 { line-height: 0.92; }
+
+    .process-step {
+        border-right: none !important;
     }
 
-    h1 {
-        font-size: 2.5rem;
+    .stat-item {
+        border-right: none;
     }
+}
 
-    h2 {
-        font-size: 1.875rem;
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal-stat,
+    img,
+    .scroll-line {
+        transition: none;
+        animation: none;
+        opacity: 1;
+        transform: none;
     }
 }

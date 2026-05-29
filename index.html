@@ -5,162 +5,364 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waveform Studio | Parametric Architectural Shelving</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-[#F9F7F2] text-[#1A1A1A] antialiased">
+<body class="bg-[#F5F0E8] text-[#1C1C1C] antialiased">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center mix-blend-difference text-white">
-        <div class="text-xl tracking-widest font-light serif uppercase">Waveform</div>
-        <div class="hidden md:flex space-x-12 text-xs uppercase tracking-widest">
-            <a href="#collection" class="hover:opacity-50 transition-opacity duration-300">The Collection</a>
-            <a href="#process" class="hover:opacity-50 transition-opacity duration-300">Process</a>
-            <a href="#b2b" class="hover:opacity-50 transition-opacity duration-300">B2B Portal</a>
+    <nav id="main-nav" class="fixed w-full z-50 px-8 md:px-16 py-7 flex justify-between items-center transition-all duration-500">
+        <div class="nav-logo mono text-xs tracking-[0.3em] uppercase text-white mix-blend-difference">Waveform</div>
+        <div class="hidden md:flex space-x-10 items-center">
+            <a href="#process" class="nav-link mono text-[10px] uppercase tracking-[0.25em] text-white mix-blend-difference hover:opacity-50 transition-opacity duration-300">Process</a>
+            <a href="#collection" class="nav-link mono text-[10px] uppercase tracking-[0.25em] text-white mix-blend-difference hover:opacity-50 transition-opacity duration-300">Collection</a>
+            <a href="#materials" class="nav-link mono text-[10px] uppercase tracking-[0.25em] text-white mix-blend-difference hover:opacity-50 transition-opacity duration-300">Materials</a>
+            <a href="#b2b" class="nav-link mono text-[10px] uppercase tracking-[0.25em] text-white mix-blend-difference hover:opacity-50 transition-opacity duration-300">Trade</a>
         </div>
-        <a href="#b2b" class="border border-white px-6 py-2 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">Inquire</a>
+        <a href="#b2b" class="nav-cta mono text-[10px] uppercase tracking-[0.25em] border border-white text-white px-6 py-2.5 mix-blend-difference hover:bg-white hover:text-black transition-all duration-300">Inquire</a>
     </nav>
 
     <!-- Hero -->
-    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <section class="relative h-screen w-full flex items-end overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="images/shelf7.png" alt="Waveform shelving — organic parametric flow" class="w-full h-full object-cover brightness-75">
-            <div class="absolute inset-0 bg-black/20"></div>
+            <img src="images/shelf7.png" alt="Waveform shelving — parametric flow" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10"></div>
         </div>
-        <div class="relative z-10 text-center px-4 reveal">
-            <p class="text-white uppercase tracking-[0.5em] text-xs mb-6">Batch 01 / Limited Release</p>
-            <h1 class="serif text-5xl md:text-8xl text-white italic font-light leading-tight">
-                Asymmetry by <span class="block not-italic font-bold">Nature.</span>
-            </h1>
-            <p class="text-white/60 font-light text-sm md:text-base max-w-md mx-auto mt-6">Parametric shelving for architects and interior designers who refuse the ordinary.</p>
-            <div class="mt-12 flex flex-col md:flex-row gap-6 justify-center">
-                <a href="#collection" class="bg-white text-black px-10 py-4 text-xs uppercase tracking-widest hover:scale-105 transition-transform duration-300">View Collection</a>
-                <a href="#b2b" class="border border-white text-white px-10 py-4 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">Trade Inquiry</a>
+
+        <div class="relative z-10 w-full px-8 md:px-16 pb-20 md:pb-28">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
+                <div>
+                    <p class="mono text-[10px] uppercase tracking-[0.4em] text-white/60 mb-5">Batch 01 — Limited Release</p>
+                    <h1 class="serif text-6xl md:text-[7rem] lg:text-[9rem] text-white italic font-light leading-[0.9] tracking-tight">
+                        Asymmetry<br><span class="not-italic font-bold">by Nature.</span>
+                    </h1>
+                </div>
+                <div class="md:max-w-xs md:pb-4">
+                    <p class="text-white/50 body font-light text-base leading-relaxed mb-8">Parametric shelving for architects and interior designers who refuse the ordinary.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#collection" class="btn-primary mono text-[10px] uppercase tracking-[0.25em] bg-white text-black px-8 py-4 text-center hover:bg-[#F5F0E8] transition-colors duration-300">View Collection</a>
+                        <a href="#b2b" class="btn-outline mono text-[10px] uppercase tracking-[0.25em] border border-white/60 text-white px-8 py-4 text-center hover:border-white hover:bg-white/10 transition-all duration-300">Trade Inquiry</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-60">
+            <span class="mono text-[9px] uppercase tracking-[0.3em] text-white">Scroll</span>
+            <div class="scroll-line w-px h-12 bg-white/40 origin-top"></div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="bg-[#1C1C1C] py-10 px-8 md:px-16">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/10">
+            <div class="stat-item px-4 md:px-8 first:pl-0 reveal-stat">
+                <p class="serif text-3xl md:text-4xl text-white italic font-light">01</p>
+                <p class="mono text-[10px] uppercase tracking-[0.25em] text-white/40 mt-2">Current Batch</p>
+            </div>
+            <div class="stat-item px-4 md:px-8 reveal-stat">
+                <p class="serif text-3xl md:text-4xl text-white italic font-light">4</p>
+                <p class="mono text-[10px] uppercase tracking-[0.25em] text-white/40 mt-2">Wood Species</p>
+            </div>
+            <div class="stat-item px-4 md:px-8 reveal-stat">
+                <p class="serif text-3xl md:text-4xl text-white italic font-light">14–21</p>
+                <p class="mono text-[10px] uppercase tracking-[0.25em] text-white/40 mt-2">Days Lead Time</p>
+            </div>
+            <div class="stat-item px-4 md:px-8 reveal-stat">
+                <p class="serif text-3xl md:text-4xl text-white italic font-light">∞</p>
+                <p class="mono text-[10px] uppercase tracking-[0.25em] text-white/40 mt-2">Configurations</p>
             </div>
         </div>
     </section>
 
-    <!-- Philosophy / Process -->
-    <section id="process" class="py-24 md:py-40 bg-white">
-        <div class="container mx-auto px-8 grid md:grid-cols-2 gap-20 items-center">
-            <div class="max-w-md reveal">
-                <p class="uppercase tracking-[0.3em] text-xs text-neutral-400 mb-4">Our Process</p>
-                <h2 class="serif text-4xl md:text-5xl mb-8 italic">The Machine &amp; <br><strong>The Grain.</strong></h2>
-                <p class="text-neutral-600 font-light leading-relaxed mb-6">Each Waveform piece begins as a digital simulation. Using generative algorithms, we map fluid dynamics to structural physics &mdash; then hand-finish every curve in locally sourced hardwood.</p>
-                <p class="text-neutral-400 font-light leading-relaxed text-sm">No two shelves are identical. The algorithm ensures structural integrity; the craftsman ensures soul.</p>
-                <img src="images/shelf6.png" alt="Macro detail — hand-finished wood grain" class="w-full h-64 object-cover mt-12 grayscale hover:grayscale-0 transition-all duration-700 shadow-xl">
+    <!-- Process -->
+    <section id="process" class="py-28 md:py-44 px-8 md:px-16">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-20 reveal">
+                <div>
+                    <p class="mono text-[10px] uppercase tracking-[0.3em] text-[#8B7355] mb-4">— 01</p>
+                    <h2 class="serif text-4xl md:text-6xl italic font-light leading-tight">The Machine &amp;<br><strong class="not-italic font-bold">The Grain.</strong></h2>
+                </div>
+                <p class="body text-[#6B6B6B] font-light text-base leading-relaxed max-w-sm mt-8 md:mt-0">Each piece begins as a digital simulation. Generative algorithms map fluid dynamics to structural physics — then every curve is hand-finished in locally sourced hardwood.</p>
             </div>
-            <div class="aspect-[4/5] bg-neutral-100 overflow-hidden reveal">
-                <img src="images/shelf2.png" alt="Waveform shelf in high-tech office setting" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+
+            <!-- 3-step process -->
+            <div class="grid md:grid-cols-3 gap-0 border-t border-[#1C1C1C]/10">
+                <div class="process-step py-12 md:pr-12 border-b md:border-b-0 md:border-r border-[#1C1C1C]/10 reveal">
+                    <span class="mono text-[10px] tracking-[0.3em] text-[#8B7355] uppercase">Step 01</span>
+                    <h3 class="serif text-2xl italic font-light mt-4 mb-4">Algorithmic<br><strong>Form-Finding</strong></h3>
+                    <p class="body text-[#6B6B6B] font-light text-sm leading-relaxed">Parametric scripts generate wave profiles based on structural load vectors. Every curve is mathematically intentional.</p>
+                </div>
+                <div class="process-step py-12 md:px-12 border-b md:border-b-0 md:border-r border-[#1C1C1C]/10 reveal">
+                    <span class="mono text-[10px] tracking-[0.3em] text-[#8B7355] uppercase">Step 02</span>
+                    <h3 class="serif text-2xl italic font-light mt-4 mb-4">CNC<br><strong>Precision Cutting</strong></h3>
+                    <p class="body text-[#6B6B6B] font-light text-sm leading-relaxed">Five-axis CNC routing achieves tolerances of ±0.1mm. No two pieces share the exact same toolpath — the algorithm seeds variability.</p>
+                </div>
+                <div class="process-step py-12 md:pl-12 reveal">
+                    <span class="mono text-[10px] tracking-[0.3em] text-[#8B7355] uppercase">Step 03</span>
+                    <h3 class="serif text-2xl italic font-light mt-4 mb-4">Hand<br><strong>Finishing</strong></h3>
+                    <p class="body text-[#6B6B6B] font-light text-sm leading-relaxed">Each shelf is sanded through seven grits, oiled with food-safe hardwax, and inspected by hand. The machine ensures geometry; the craftsman ensures soul.</p>
+                </div>
+            </div>
+
+            <!-- Process image -->
+            <div class="mt-20 grid md:grid-cols-5 gap-6 items-end reveal">
+                <div class="md:col-span-3 aspect-[4/3] overflow-hidden">
+                    <img src="images/shelf2.png" alt="CNC workshop — Waveform production" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="md:col-span-2 aspect-square overflow-hidden">
+                    <img src="images/shelf6.png" alt="Hand-finished wood grain detail" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Collection -->
-    <section id="collection" class="py-24 md:py-40">
-        <div class="container mx-auto px-8">
-            <div class="max-w-lg mb-20 reveal">
-                <p class="uppercase tracking-[0.3em] text-xs text-neutral-400 mb-4">The Collection</p>
-                <h2 class="serif text-4xl md:text-5xl italic">Two Temperaments,<br><strong>One Language.</strong></h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
-                <div class="group reveal">
-                    <div class="overflow-hidden">
-                        <img src="images/shelf1.png" alt="Light Birch — lobby installation" class="w-full aspect-video object-cover mb-6 group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="flex justify-between uppercase tracking-widest text-xs">
-                        <span>Light Birch</span>
-                        <span class="text-neutral-400">From 1,200 NIS</span>
-                    </div>
-                    <p class="text-neutral-400 font-light text-xs mt-2">Scandinavian birch / matte finish / lobby &amp; reception</p>
+    <section id="collection" class="py-28 md:py-44 bg-[#1C1C1C] px-8 md:px-16">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-20 reveal">
+                <div>
+                    <p class="mono text-[10px] uppercase tracking-[0.3em] text-[#8B7355] mb-4">— 02</p>
+                    <h2 class="serif text-4xl md:text-6xl italic font-light text-white leading-tight">Two Temperaments,<br><strong class="not-italic font-bold">One Language.</strong></h2>
                 </div>
-                <div class="group md:mt-32 reveal">
-                    <div class="overflow-hidden">
-                        <img src="images/shelf5.png" alt="Smoked Walnut — executive suite" class="w-full aspect-[3/2] object-cover mb-6 group-hover:scale-105 transition-transform duration-700" style="object-position: center 35%">
+                <p class="body text-white/40 font-light text-base leading-relaxed max-w-sm mt-8 md:mt-0">Both collections share the same parametric DNA. Choose your material — the algorithm provides the rest.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+                <!-- Light Birch -->
+                <div class="group cursor-pointer reveal">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="images/shelf1.png" alt="Light Birch — lobby installation" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500 flex items-center justify-center">
+                            <a href="#b2b" class="mono text-[10px] uppercase tracking-[0.25em] bg-white text-black px-8 py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-[#F5F0E8]">Inquire Now</a>
+                        </div>
                     </div>
-                    <div class="flex justify-between uppercase tracking-widest text-xs">
-                        <span>Smoked Walnut</span>
-                        <span class="text-neutral-400">From 1,450 NIS</span>
+                    <div class="mt-6 flex justify-between items-start">
+                        <div>
+                            <h3 class="serif text-xl italic text-white font-light">Light Birch</h3>
+                            <p class="body text-white/40 font-light text-sm mt-1">Scandinavian birch / matte finish</p>
+                            <p class="mono text-[10px] uppercase tracking-[0.2em] text-white/30 mt-1">Lobby &amp; reception / commercial &amp; residential</p>
+                        </div>
+                        <p class="serif text-xl text-[#C9B99A] italic font-light whitespace-nowrap ml-4">From 1,200 ₪</p>
                     </div>
-                    <p class="text-neutral-400 font-light text-xs mt-2">American walnut / oil finish / executive &amp; boardroom</p>
+                </div>
+
+                <!-- Smoked Walnut -->
+                <div class="group cursor-pointer md:mt-24 reveal">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="images/shelf5.png" alt="Smoked Walnut — executive suite" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" style="object-position: center 35%">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500 flex items-center justify-center">
+                            <a href="#b2b" class="mono text-[10px] uppercase tracking-[0.25em] bg-white text-black px-8 py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-[#F5F0E8]">Inquire Now</a>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-between items-start">
+                        <div>
+                            <h3 class="serif text-xl italic text-white font-light">Smoked Walnut</h3>
+                            <p class="body text-white/40 font-light text-sm mt-1">American walnut / oil finish</p>
+                            <p class="mono text-[10px] uppercase tracking-[0.2em] text-white/30 mt-1">Executive &amp; boardroom / private collections</p>
+                        </div>
+                        <p class="serif text-xl text-[#C9B99A] italic font-light whitespace-nowrap ml-4">From 1,450 ₪</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Context — Full-Width Image Break -->
-    <section class="relative h-[45vh] overflow-hidden">
-        <img src="images/shelf4.png" alt="Minimalist CEO office installation" class="w-full h-full object-cover" style="object-position: center 25%">
-        <div class="absolute inset-0 bg-black/30 flex items-center justify-center reveal">
-            <p class="text-white serif text-3xl md:text-5xl italic text-center px-8 max-w-3xl font-light leading-snug">&ldquo;Furniture should whisper,<br>not shout.&rdquo;</p>
+    <!-- Quote Break -->
+    <section class="relative h-[50vh] overflow-hidden">
+        <img src="images/shelf4.png" alt="Minimalist CEO office — Waveform installation" class="w-full h-full object-cover" style="object-position: center 25%">
+        <div class="absolute inset-0 bg-black/50 flex items-center justify-center px-8 reveal">
+            <blockquote class="text-center max-w-3xl">
+                <p class="serif text-3xl md:text-5xl lg:text-6xl italic font-light text-white leading-tight">&ldquo;Furniture should<br>whisper, not shout.&rdquo;</p>
+                <cite class="mono text-[10px] uppercase tracking-[0.3em] text-white/40 mt-6 block not-italic">Waveform Studio</cite>
+            </blockquote>
         </div>
     </section>
 
-    <!-- B2B Portal -->
-    <section id="b2b" class="py-24 md:py-40 bg-[#1A1A1A] text-white">
-        <div class="container mx-auto px-8 grid lg:grid-cols-2 gap-24">
+    <!-- Materials -->
+    <section id="materials" class="py-28 md:py-44 px-8 md:px-16">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="mb-20 reveal">
+                <p class="mono text-[10px] uppercase tracking-[0.3em] text-[#8B7355] mb-4">— 03</p>
+                <h2 class="serif text-4xl md:text-6xl italic font-light leading-tight">Every Species,<br><strong class="not-italic font-bold">Chosen Slowly.</strong></h2>
+            </div>
+
+            <!-- Material specs table -->
+            <div class="border-t border-[#1C1C1C]/15 reveal">
+                <div class="hidden md:grid grid-cols-5 py-4 border-b border-[#1C1C1C]/15">
+                    <p class="mono text-[9px] uppercase tracking-[0.3em] text-[#1C1C1C]/30">Material</p>
+                    <p class="mono text-[9px] uppercase tracking-[0.3em] text-[#1C1C1C]/30">Origin</p>
+                    <p class="mono text-[9px] uppercase tracking-[0.3em] text-[#1C1C1C]/30">Finish</p>
+                    <p class="mono text-[9px] uppercase tracking-[0.3em] text-[#1C1C1C]/30">Character</p>
+                    <p class="mono text-[9px] uppercase tracking-[0.3em] text-[#1C1C1C]/30 text-right">From</p>
+                </div>
+                <div class="material-row grid grid-cols-2 md:grid-cols-5 py-6 border-b border-[#1C1C1C]/10 items-center gap-4 group hover:bg-[#1C1C1C]/[0.02] transition-colors duration-200">
+                    <p class="serif text-lg italic font-light">Light Birch</p>
+                    <p class="body text-sm text-[#6B6B6B] font-light">Scandinavia</p>
+                    <p class="body text-sm text-[#6B6B6B] font-light">Matte lacquer</p>
+                    <p class="body text-sm text-[#6B6B6B] font-light">Pale honey grain, bright &amp; clean</p>
+                    <p class="serif text-lg italic text-[#8B7355] font-light text-right">1,200 ₪</p>
+                </div>
+                <div class="material-row grid grid-cols-2 md:grid-cols-5 py-6 border-b border-[#1C1C1C]/10 items-center gap-4 hover:bg-[#1C1C1C]/[0.02] transition-colors duration-200">
+                    <p class="serif text-lg italic font-light">Smoked Walnut</p>
+                    <p class="body text-sm text-[#6B6B6B] font-light">North America</p>
+                    <p class="body text-sm text-[#6B6B6B] font-light">Hardwax oil</p>
+                    <p class="body text-sm text-[#6B6B6B] font-light">Deep chocolate, dramatic figuring</p>
+                    <p class="serif text-lg italic text-[#8B7355] font-light text-right">1,450 ₪</p>
+                </div>
+                <div class="material-row grid grid-cols-2 md:grid-cols-5 py-6 border-b border-[#1C1C1C]/10 items-center gap-4 hover:bg-[#1C1C1C]/[0.02] transition-colors duration-200">
+                    <p class="serif text-lg italic font-light">White Oak</p>
+                    <p class="body text-sm text-[#6B6B6B] font-light">Europe</p>
+                    <p class="body text-sm text-[#6B6B6B] font-light">Natural oil</p>
+                    <p class="body text-sm text-[#6B6B6B] font-light">Silver-grey ray fleck, architectural</p>
+                    <p class="serif text-lg italic text-[#8B7355] font-light text-right">1,350 ₪</p>
+                </div>
+                <div class="material-row grid grid-cols-2 md:grid-cols-5 py-6 border-b border-[#1C1C1C]/10 items-center gap-4 hover:bg-[#1C1C1C]/[0.02] transition-colors duration-200">
+                    <p class="serif text-lg italic font-light">Custom Species</p>
+                    <p class="body text-sm text-[#6B6B6B] font-light">On request</p>
+                    <p class="body text-sm text-[#6B6B6B] font-light">Your choice</p>
+                    <p class="body text-sm text-[#6B6B6B] font-light">Cherry, ash, ebonised oak &amp; more</p>
+                    <p class="serif text-lg italic text-[#8B7355] font-light text-right">POA</p>
+                </div>
+            </div>
+
+            <!-- Dimensions note -->
+            <div class="mt-16 grid md:grid-cols-3 gap-12 reveal">
+                <div class="spec-card border border-[#1C1C1C]/15 p-8">
+                    <p class="mono text-[9px] uppercase tracking-[0.3em] text-[#8B7355] mb-3">Standard</p>
+                    <p class="serif text-2xl italic font-light">120 × 22 cm</p>
+                    <p class="body text-sm text-[#6B6B6B] font-light mt-2">Depth: 28 cm / Thickness: 4 cm</p>
+                </div>
+                <div class="spec-card border border-[#1C1C1C]/15 p-8">
+                    <p class="mono text-[9px] uppercase tracking-[0.3em] text-[#8B7355] mb-3">Extended</p>
+                    <p class="serif text-2xl italic font-light">160 × 28 cm</p>
+                    <p class="body text-sm text-[#6B6B6B] font-light mt-2">Depth: 32 cm / Thickness: 4.5 cm</p>
+                </div>
+                <div class="spec-card border border-[#1C1C1C]/15 p-8">
+                    <p class="mono text-[9px] uppercase tracking-[0.3em] text-[#8B7355] mb-3">Bespoke</p>
+                    <p class="serif text-2xl italic font-light">Any dimension</p>
+                    <p class="body text-sm text-[#6B6B6B] font-light mt-2">Custom parametric profile on request</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B -->
+    <section id="b2b" class="py-28 md:py-44 bg-[#1C1C1C] text-white px-8 md:px-16">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 lg:gap-32">
+
+            <!-- Left -->
             <div class="reveal">
-                <p class="uppercase tracking-[0.3em] text-xs text-neutral-500 mb-4">For the Trade</p>
-                <h2 class="serif text-4xl md:text-5xl italic mb-6">Project Inquiry</h2>
-                <p class="text-neutral-400 font-light leading-relaxed mb-12 max-w-md">Volume pricing, custom dimensions, and dedicated project management for architects and design firms. We respond within 24 hours.</p>
-                <ul class="divide-y divide-white/10 border-y border-white/10 text-sm">
-                    <li class="py-4 flex justify-between"><span>Dimensions</span><span class="opacity-60">Custom &amp; Standard (120cm x 22cm)</span></li>
-                    <li class="py-4 flex justify-between"><span>Materials</span><span class="opacity-60">Birch, Walnut, Oak, Custom</span></li>
-                    <li class="py-4 flex justify-between"><span>Lead Time</span><span class="opacity-60">14&ndash;21 Days</span></li>
-                    <li class="py-4 flex justify-between"><span>MOQ</span><span class="opacity-60">5 Units</span></li>
-                </ul>
-                <img src="images/shelf3.png" alt="Waveform shelving in conference room" class="mt-12 w-full h-48 object-cover opacity-40 hover:opacity-70 transition-opacity duration-500" style="object-position: center 30%">
+                <p class="mono text-[10px] uppercase tracking-[0.3em] text-[#8B7355] mb-4">— 04</p>
+                <h2 class="serif text-4xl md:text-5xl italic font-light mb-6 leading-tight">For the<br><strong class="not-italic font-bold">Trade.</strong></h2>
+                <p class="body text-white/50 font-light leading-relaxed mb-12 max-w-md text-base">Volume pricing, custom dimensions, and a dedicated project manager for architects and design firms. We respond within 24 hours.</p>
+
+                <div class="space-y-0 border-t border-white/10">
+                    <div class="flex justify-between py-5 border-b border-white/10">
+                        <span class="mono text-[10px] uppercase tracking-[0.2em] text-white/60">Dimensions</span>
+                        <span class="body text-sm text-white/40 font-light">Custom &amp; Standard</span>
+                    </div>
+                    <div class="flex justify-between py-5 border-b border-white/10">
+                        <span class="mono text-[10px] uppercase tracking-[0.2em] text-white/60">Materials</span>
+                        <span class="body text-sm text-white/40 font-light">Birch, Walnut, Oak, Custom</span>
+                    </div>
+                    <div class="flex justify-between py-5 border-b border-white/10">
+                        <span class="mono text-[10px] uppercase tracking-[0.2em] text-white/60">Lead Time</span>
+                        <span class="body text-sm text-white/40 font-light">14–21 Days</span>
+                    </div>
+                    <div class="flex justify-between py-5 border-b border-white/10">
+                        <span class="mono text-[10px] uppercase tracking-[0.2em] text-white/60">MOQ</span>
+                        <span class="body text-sm text-white/40 font-light">5 Units</span>
+                    </div>
+                    <div class="flex justify-between py-5 border-b border-white/10">
+                        <span class="mono text-[10px] uppercase tracking-[0.2em] text-white/60">Trade Discount</span>
+                        <span class="body text-sm text-white/40 font-light">15–25% on volume</span>
+                    </div>
+                </div>
+
+                <div class="mt-12 overflow-hidden">
+                    <img src="images/shelf3.png" alt="Waveform in conference room" class="w-full h-52 object-cover opacity-30 hover:opacity-60 transition-opacity duration-500" style="object-position: center 30%">
+                </div>
             </div>
-            <div class="bg-white p-10 md:p-12 text-black reveal">
-                <h3 class="serif text-2xl italic mb-8">Get in Touch</h3>
-                <form id="b2b-form" class="space-y-6" novalidate>
-                    <div>
-                        <input type="text" name="name" placeholder="Full Name *" required
-                               class="w-full border-b border-neutral-300 py-3 outline-none text-sm font-light placeholder:text-neutral-400 focus:border-black transition-colors duration-300">
-                        <p class="field-error text-red-600 text-xs mt-1 hidden"></p>
-                    </div>
-                    <div>
-                        <input type="text" name="company" placeholder="Company / Studio *" required
-                               class="w-full border-b border-neutral-300 py-3 outline-none text-sm font-light placeholder:text-neutral-400 focus:border-black transition-colors duration-300">
-                        <p class="field-error text-red-600 text-xs mt-1 hidden"></p>
-                    </div>
-                    <div>
-                        <input type="email" name="email" placeholder="Email Address *" required
-                               class="w-full border-b border-neutral-300 py-3 outline-none text-sm font-light placeholder:text-neutral-400 focus:border-black transition-colors duration-300">
-                        <p class="field-error text-red-600 text-xs mt-1 hidden"></p>
-                    </div>
-                    <div>
-                        <input type="tel" name="phone" placeholder="Phone Number *" required
-                               class="w-full border-b border-neutral-300 py-3 outline-none text-sm font-light placeholder:text-neutral-400 focus:border-black transition-colors duration-300">
-                        <p class="field-error text-red-600 text-xs mt-1 hidden"></p>
-                    </div>
-                    <div>
-                        <textarea name="message" rows="3" placeholder="Project details (optional)"
-                                  class="w-full border-b border-neutral-300 py-3 outline-none text-sm font-light placeholder:text-neutral-400 focus:border-black transition-colors duration-300 resize-none"></textarea>
-                    </div>
-                    <button type="submit" id="submit-btn"
-                            class="w-full bg-[#1A1A1A] text-white py-4 text-xs uppercase tracking-widest mt-4 hover:bg-neutral-800 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
-                        Submit Inquiry
-                    </button>
-                    <div id="form-success" class="hidden text-center py-4">
-                        <p class="serif text-xl italic mb-2">Thank you.</p>
-                        <p class="text-neutral-500 text-sm font-light">We'll be in touch within 24 hours.</p>
-                    </div>
-                </form>
+
+            <!-- Right — Form -->
+            <div class="reveal">
+                <div class="bg-[#F5F0E8] p-10 md:p-12 text-[#1C1C1C]">
+                    <h3 class="serif text-2xl italic font-light mb-2">Project Inquiry</h3>
+                    <p class="body text-sm text-[#6B6B6B] font-light mb-10">We'll be in touch within 24 hours.</p>
+
+                    <form id="b2b-form" class="space-y-7" novalidate>
+                        <div class="form-field">
+                            <label class="mono text-[9px] uppercase tracking-[0.25em] text-[#1C1C1C]/40 block mb-2">Full Name *</label>
+                            <input type="text" name="name" required
+                                   class="w-full border-b border-[#1C1C1C]/20 pb-3 outline-none text-sm body font-light placeholder:text-[#1C1C1C]/20 focus:border-[#1C1C1C] transition-colors duration-200 bg-transparent">
+                            <p class="field-error body text-red-600 text-xs mt-1.5 hidden"></p>
+                        </div>
+                        <div class="form-field">
+                            <label class="mono text-[9px] uppercase tracking-[0.25em] text-[#1C1C1C]/40 block mb-2">Company / Studio *</label>
+                            <input type="text" name="company" required
+                                   class="w-full border-b border-[#1C1C1C]/20 pb-3 outline-none text-sm body font-light placeholder:text-[#1C1C1C]/20 focus:border-[#1C1C1C] transition-colors duration-200 bg-transparent">
+                            <p class="field-error body text-red-600 text-xs mt-1.5 hidden"></p>
+                        </div>
+                        <div class="form-field">
+                            <label class="mono text-[9px] uppercase tracking-[0.25em] text-[#1C1C1C]/40 block mb-2">Email Address *</label>
+                            <input type="email" name="email" required
+                                   class="w-full border-b border-[#1C1C1C]/20 pb-3 outline-none text-sm body font-light focus:border-[#1C1C1C] transition-colors duration-200 bg-transparent">
+                            <p class="field-error body text-red-600 text-xs mt-1.5 hidden"></p>
+                        </div>
+                        <div class="form-field">
+                            <label class="mono text-[9px] uppercase tracking-[0.25em] text-[#1C1C1C]/40 block mb-2">Phone Number *</label>
+                            <input type="tel" name="phone" required
+                                   class="w-full border-b border-[#1C1C1C]/20 pb-3 outline-none text-sm body font-light focus:border-[#1C1C1C] transition-colors duration-200 bg-transparent">
+                            <p class="field-error body text-red-600 text-xs mt-1.5 hidden"></p>
+                        </div>
+                        <div class="form-field">
+                            <label class="mono text-[9px] uppercase tracking-[0.25em] text-[#1C1C1C]/40 block mb-2">Project Details</label>
+                            <textarea name="message" rows="3"
+                                      class="w-full border-b border-[#1C1C1C]/20 pb-3 outline-none text-sm body font-light focus:border-[#1C1C1C] transition-colors duration-200 bg-transparent resize-none"></textarea>
+                        </div>
+                        <button type="submit" id="submit-btn"
+                                class="w-full bg-[#1C1C1C] text-[#F5F0E8] py-4 mono text-[10px] uppercase tracking-[0.25em] mt-4 hover:bg-[#2C2C2C] transition-colors duration-300 disabled:opacity-40 disabled:cursor-not-allowed">
+                            Submit Inquiry
+                        </button>
+                        <div id="form-success" class="hidden text-center py-6">
+                            <p class="serif text-2xl italic font-light mb-2">Thank you.</p>
+                            <p class="body text-[#6B6B6B] text-sm font-light">We'll be in touch within 24 hours.</p>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
+    </section>
+
+    <!-- Final image -->
+    <section class="relative h-[60vh] overflow-hidden">
+        <img src="images/shelf4.png" alt="Waveform — installed" class="w-full h-full object-cover" style="object-position: center 40%">
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#1A1A1A] text-white border-t border-white/10 py-12">
-        <div class="container mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-xs tracking-widest uppercase font-light serif">Waveform Studio</div>
-            <div class="flex space-x-10 text-xs uppercase tracking-widest text-neutral-500">
-                <a href="#process" class="hover:text-white transition-colors duration-300">Process</a>
-                <a href="#collection" class="hover:text-white transition-colors duration-300">Collection</a>
-                <a href="#b2b" class="hover:text-white transition-colors duration-300">Trade</a>
+    <footer class="bg-[#1C1C1C] text-white border-t border-white/10 py-14 px-8 md:px-16">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 items-start">
+            <div>
+                <p class="mono text-xs tracking-[0.35em] uppercase font-light mb-3">Waveform Studio</p>
+                <p class="body text-white/30 font-light text-sm leading-relaxed">Parametric shelving for spaces that demand more than ordinary.</p>
             </div>
-            <p class="text-neutral-600 text-xs">&copy; 2026 Waveform Studio. All rights reserved.</p>
+            <div class="flex flex-col gap-3">
+                <p class="mono text-[9px] uppercase tracking-[0.3em] text-white/30 mb-1">Navigate</p>
+                <a href="#process" class="body text-sm text-white/50 font-light hover:text-white transition-colors duration-200">Process</a>
+                <a href="#collection" class="body text-sm text-white/50 font-light hover:text-white transition-colors duration-200">Collection</a>
+                <a href="#materials" class="body text-sm text-white/50 font-light hover:text-white transition-colors duration-200">Materials</a>
+                <a href="#b2b" class="body text-sm text-white/50 font-light hover:text-white transition-colors duration-200">Trade Inquiry</a>
+            </div>
+            <div>
+                <p class="mono text-[9px] uppercase tracking-[0.3em] text-white/30 mb-4">Batch 01 — Now Open</p>
+                <a href="#b2b" class="btn-footer mono text-[10px] uppercase tracking-[0.25em] border border-white/30 text-white/60 px-6 py-3 inline-block hover:border-white hover:text-white transition-all duration-300">Begin a Project</a>
+                <p class="mono text-[9px] text-white/20 mt-10 tracking-wide">&copy; 2026 Waveform Studio. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
